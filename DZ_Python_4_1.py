@@ -58,8 +58,7 @@ def decode_equation(equation: dict) -> str:
 # with open('equation1.txt', 'w', encoding='UTF-8') as file:
 #     file.write(equation)
 # Работаем без file.close()
-# equation = decode_equation(create_pattern())
-# print(equation)
+
 def encode_equation(equation: str) -> dict:
     new_equation = []
     equation = equation.replace(' = 0', '').replace(' + ', ' ').replace(' - ', ' -').split(' ')
@@ -104,7 +103,10 @@ def equation_addition(first: dict, second: dict) -> dict:
     return dict(sorted(base.items())[::-1])
 
 result = equation_addition(first, second)
-
+print()
+print('Твой первый список: ')
 print(decode_equation(first))
+print('Твой второй список: ')
 print(decode_equation(second))
+print('Сумма списков многочленов: ')
 print(decode_equation(result))
